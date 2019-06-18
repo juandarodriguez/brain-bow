@@ -1,4 +1,4 @@
-const lorca = require('lorca-nlp');
+const lorca = require('lml-lorca-nlp');
 
 module.exports.BagOfWords = function () {
   
