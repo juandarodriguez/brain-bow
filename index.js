@@ -1,13 +1,11 @@
+const lorca = require('lorca-nlp');
+
 module.exports.BagOfWords = function () {
   
     this.tokenize = function(text) {
-      return text
-        .replace(/'/g, '')
-        .replace(/\W/g, ' ')
-        .replace(/\s\s+/g, ' ')
-        .split(' ').map( s => {
-          return s.toLowerCase();
-        });
+      let doc = lorca(text);
+      let words = doc.words().get();
+      return words;
     }
   
     this.extractDictionary = function(textArray) {
