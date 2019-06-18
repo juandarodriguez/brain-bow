@@ -7,8 +7,7 @@ describe("Basic operations", function () {
     it("Tokenize", function () {
         let text = "Del salón en el ángulo oscuro, de su dueño tal vez olvidada."
         let t = bow.tokenize(text);
-        console.log(t);
-        expect(t).toEqual(["del", "salón", "en", "el", "ángulo", "oscuro", "de", "su", "dueño", "tal", "vez", "olvidada"]) ;
+        expect(t).toEqual(["salon", "angul", "oscur", "dueñ", "tal", "vez", "olvid"]) ;
     });
 
 });
