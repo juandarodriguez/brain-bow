@@ -88,6 +88,14 @@ module.exports.BagOfWords = function () {
   }
 
   this.maxarg = function (array) {
+    let a = [];
+    if (!Array.isArray(array)){
+      for (let i in array){
+        a.push(array[i])
+      }
+    }
+    array = Array.isArray(array)? array: a;
+
     return array.indexOf(Math.max.apply(Math, array));
   }
 }
