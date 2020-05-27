@@ -1,6 +1,6 @@
 const lorca = require('lml-lorca-nlp');
 const sw = require('stopword');
-const natural = require('natural');
+const englishTokenizer = require('./tokenizer');
 
 const s_words = [
     'a', 'un', 'el', 'ella', 'y', 'sobre', 'de', 'la', 'que', 'en',
@@ -24,9 +24,8 @@ module.exports.BagOfWords = function() {
     }
 
     this.englishTokenize = function(text) {
-        natural.PorterStemmer.attach();
-
-        return (text.tokenizeAndStem());
+        let tokens = englishTokenizer(text)
+        return (tokens);
     }
 
     this.tokenize = function(text, lang) {
