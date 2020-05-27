@@ -1,18 +1,19 @@
 {
-  "name": "brain-bow",
-  "version": "1.0.7",
-  "description": "Library with Bag Of Words functions",
-  "main": "index.js",
-  "scripts": {
-    "test": "jasmine"
-  },
-  "author": "Juan David Rodríguez <juanda@juandarodriguez.es>",
-  "license": "GPL-2.0",
-  "devDependencies": {
-    "jasmine": "^3.4.0"
-  },
-  "dependencies": {
-    "lml-lorca-nlp": "^1.0.15",
-    "stopword": "^0.2.4"
-  }
+    "name": "brain-bow",
+    "version": "1.0.8",
+    "description": "Library with Bag Of Words functions",
+    "main": "index.js",
+    "scripts": {
+        "test": "jasmine"
+    },
+    "author": "Juan David Rodríguez <juanda@juandarodriguez.es>",
+    "license": "GPL-2.0",
+    "devDependencies": {
+        "jasmine": "^3.4.0"
+    },
+    "dependencies": {
+        "lml-lorca-nlp": "^1.0.15",
+        "natural": "^2.1.5",
+        "stopword": "^0.2.4"
+    }
 }
