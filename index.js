@@ -13,7 +13,9 @@ const s_words = [
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '_'
 ];
 
-module.exports.BagOfWords = function() {
+module.exports.BagOfWords = function(lang) {
+
+    this.lang = lang;
 
     this.spanishTokenize = function(text) {
         let doc = lorca(text);
@@ -28,22 +30,22 @@ module.exports.BagOfWords = function() {
         return (tokens);
     }
 
-    this.tokenize = function(text, lang) {
-        if (lang == 'es') {
+    this.tokenize = function(text) {
+        if (this.lang == 'es') {
             return this.spanishTokenize(text);
-        } else if (lang == 'en') {
+        } else if (this.lang == 'en') {
             return this.englishTokenize(text);
         }
 
     }
 
-    this.extractDictionary = function(textArray, lang) {
+    this.extractDictionary = function(textArray) {
         var dict = {},
             keys = [],
             words;
         textArray = Array.isArray(textArray) ? textArray : [textArray];
         textArray.forEach((text) => {
-            words = this.tokenize(text, lang);
+            words = this.tokenize(text);
             words.forEach((word) => {
                 word = word.toLowerCase();
                 if (!dict[word] && word !== '') {
