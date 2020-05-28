@@ -81,7 +81,7 @@ module.exports = function(word) {
 
 
     // step 1a
-    rx = /(?:(ss)es|(..i)(?:ed|es)|(us)|(ss)|(.ie)(?:d|s))$/;
+    let rx = /(?:(ss)es|(..i)(?:ed|es)|(us)|(ss)|(.ie)(?:d|s))$/;
     if (rx.test(word)) {
         word = word.replace(rx, '$1$2$3$4$5');
     } else {
